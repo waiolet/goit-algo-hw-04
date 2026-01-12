@@ -13,7 +13,7 @@ def total_salary(path):
     for line in lines:
         try:
             name, salary_str = line.strip().split(",")
-            salary = int(float(salary_str))
+            salary = float(salary_str)
             total += salary
             count += 1
         except ValueError:
@@ -21,7 +21,7 @@ def total_salary(path):
             continue
 
 
-    average = round(total/count) if count > 0 else 0
+    average = total/count if count > 0 else 0
     return total, average
 
 
@@ -32,3 +32,4 @@ if result is None:
 else:
     total, average = result
     print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+
